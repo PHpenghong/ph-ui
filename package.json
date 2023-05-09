@@ -1,0 +1,85 @@
+{
+  "name": "ph-ui",
+  "private": false,
+  "version": "0.0.1",
+  "files": [
+    "lib"
+  ],
+  "exports": {
+    ".": {
+      "require": "./lib/ph-ui.es.js",
+      "import": "./lib/ph-ui.es.js"
+    },
+    "./lib/*": {
+      "require": "./lib/*/index.es.js",
+      "import": "./lib/*/index.es.js"
+    },
+    "./css": "./lib/style.css",
+    "./style/*": "./lib/*/style.css"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "build:components": "node ./command/build.js",
+    "lib": "npm run build:components",
+    "lib2": "npm run build:components && copy package.json",
+    "test": "vitest",
+    "test:update": "vitest --update",
+    "coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@ant-design/icons-vue": "^6.1.0",
+    "@fullcalendar/core": "^5.11.0",
+    "@fullcalendar/daygrid": "^5.11.0",
+    "@fullcalendar/interaction": "^5.11.0",
+    "@types/lodash": "^4.14.182",
+    "@wangeditor/editor": "^5.0.1",
+    "ant-design-vue": "^3.2.15",
+    "lodash": "^4.17.21",
+    "nprogress": "^0.2.0",
+    "vite-plugin-svg-icons": "^2.0.1",
+    "vue": "^3.2.37",
+    "vue-router": "^4.0.14"
+  },
+  "devDependencies": {
+    "@testing-library/vue": "^7.0.0",
+    "@types/echarts": "^4.9.16",
+    "@types/mockjs": "^1.0.6",
+    "@types/node": "^18.14.2",
+    "@types/nprogress": "^0.2.0",
+    "@types/qs": "^6.9.7",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "@vitejs/plugin-vue": "^2.3.4",
+    "@vitejs/plugin-vue-jsx": "^1.3.10",
+    "@vitest/coverage-c8": "^0.29.2",
+    "@vue/compiler-sfc": "^3.2.47",
+    "@vue/test-utils": "^2.3.1",
+    "axios": "^0.27.2",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "echarts": "^5.4.1",
+    "eslint": "^8.29.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.8.0",
+    "flush-promises": "^1.0.2",
+    "fs-extra": "^10.1.0",
+    "happy-dom": "^8.9.0",
+    "jsdom": "^21.1.0",
+    "mockjs": "^1.1.0",
+    "prettier": "^2.8.0",
+    "qs": "^6.11.0",
+    "sass": "^1.50.1",
+    "sass-loader": "^12.6.0",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.5",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-test": "^0.0.5",
+    "vitest": "^0.29.2",
+    "vue-template-compiler": "^2.7.14",
+    "vue-tsc": "^0.39.5"
+  }
+}

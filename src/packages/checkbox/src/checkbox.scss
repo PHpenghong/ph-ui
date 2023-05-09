@@ -1,0 +1,90 @@
+@import '../../theme/pul.scss';
+
+/* Checkbox */
+.ph_checkbox-wrapper {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #000000;
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  font-feature-settings: "tnum";
+  line-height: unset;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 8px;
+}
+.ph_checkbox {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #000000;
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  font-feature-settings: "tnum";
+  position: relative;
+  // top: 0.2em;
+  // line-height: 1;
+  white-space: nowrap;
+  outline: none;
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+}
+.ph_checkbox-span {
+  padding-left: 8px;
+}
+.ph_checkbox::before {
+  position: relative;
+  content: "";
+  top: -2px;
+  left: -1px;
+  width: 17px;
+  height: 17px;
+  display: block;
+  border-radius: 2px;
+  background-color: #ffffff;
+  border: 1px solid $theme-gray-color;
+  z-index: 5;
+}
+.ph_checkbox-hover:hover::before {
+  border: 1px solid $theme-color;
+}
+.ph_checkbox:checked::after {
+  position: relative;
+  content: "\2713";
+  width: 17px;
+  height: 17px;
+  top: -19px;
+  left: -1px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: $theme-color;
+  border: 1px solid $theme-color;
+  display: block;
+  border-radius: 2px;
+  visibility: visible;
+  text-align: center;
+  z-index: 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ph_checkbox-indeterminate:indeterminate::after {
+  position: relative;
+  content: "";
+  bottom: 15px;
+  left: 3px;
+  width: 9px;
+  height: 9px;
+  display: block;
+  border-radius: 2px;
+  visibility: visible;
+  background-color: $theme-color;
+  z-index: 6;
+}

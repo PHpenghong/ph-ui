@@ -1,0 +1,38 @@
+$success-color: #00D358;
+$success-bg-color: #E6FBED;
+
+$info-color: #0076F1;
+$info-bg-color: #ECF3FB;
+
+$warn-color: #FF7800;
+$warn-bg-color: #FEF9EA;
+
+$error-color: #FF494A;
+$error-bg-color: #FFE0DD;
+
+$color-list: (
+  success-color: $success-color,
+  info-color: $info-color,
+  warn-color: $warn-color,
+  error-color: $error-color
+);
+
+$bg-color-list: (
+  success-bg-color: $success-bg-color,
+  info-bg-color: $info-bg-color,
+  warn-bg-color: $warn-bg-color,
+  error-bg-color: $error-bg-color
+);
+
+@mixin message-className {
+  @each $type in 'success','info','warn','error' {
+    .#{$type}-message {
+      color: map-get($color-list, #{$type}-color);
+      background-color: map-get($bg-color-list, #{$type}-bg-color);
+    }
+  }
+  // .#{$type}-message {
+  //   color: map-get($color-list, #{$type}-color);
+  //   background-color: map-get($bg-color-list, #{$type}-bg-color);
+  // }
+}
