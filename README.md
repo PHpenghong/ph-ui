@@ -21,41 +21,41 @@ npm run lib
 
 # 安装
 ## 私服
-npm config set registry http://172.16.39.136:4873  
-pnpm config set registry http://172.16.39.136:4873
+npm config set registry http://addr
+pnpm config set registry http://addr
 
-npm i ph-ui --registry=http://172.16.39.136:4873  
-pnpm i ph-ui --registry=http://172.16.39.136:4873
+npm i xx-ui --registry=http://addr 
+pnpm i xx-ui --registry=http://addr
 
 ## NPM
 npm config set registry https://www.npmjs.com
 pnpm config set registry https://www.npmjs.com
 
-npm i ph-ui
-pnpm i ph-ui
+npm i @without_end/ph-ui
+pnpm i @without_end/ph-ui
 
 # 按需
 ```js
-import { PTable } from 'ph-ui'
-import PTable from 'ph-ui/lib/table'
-import 'ph-ui/style/table'
+import { PTable } from '@without_end/ph-ui'
+import PTable from '@without_end/ph-ui/lib/table'
+import '@without_end/ph-ui/style/table'
 ```
 
 # 全局样式
 ```js
-import 'ph-ui/css'
+import '@without_end/ph-ui/css'
 ```
 
 # 发布组件
-npm publish --registry=http://172.16.39.136:4873
+<!-- npm publish --registry=http://addr -->
 
 # ts处理
 ```js
 .d.ts 文件
 
-declare module 'ph-ui'
+declare module '@without_end/ph-ui'
 
-declare module 'ph-ui/lib/*' {
+declare module '@without_end/ph-ui/lib/*' {
   import type { DefineComponent } from 'vue'
   const component: DefineComponent<{}, {}, any>
   export default component
